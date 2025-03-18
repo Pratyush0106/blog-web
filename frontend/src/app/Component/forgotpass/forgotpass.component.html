@@ -1,0 +1,26 @@
+
+
+
+<!-- forgotpass.component.html -->
+ <body>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+  <div class="card login-form shadow-lg p-3 mb-5 bg-white rounded animate__animated animate__fadeIn">
+    <div class="card-body">
+      <h3 class="card-title text-center">Reset Password</h3>
+      <div class="card-text">
+        <form (ngSubmit)="onForgotPassword()">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Enter your username and we will send you a link to reset your password.</label>
+            <input type="text" class="form-control form-control-sm mt-2" [(ngModel)]="username" name="username" placeholder="Enter your username" required>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block mt-3">Send Password Reset Email</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</body>

@@ -1,0 +1,37 @@
+<div class="container mt-4">
+  <div class="form-container">
+    <button type="button" class="btn-close" aria-label="Close" style="position: absolute; top: 10px; left: 90%;" (click)="closeForm()"></button>
+    <div class="row">
+      <div class="col-md-4 text-center">
+        <div class="profile-img"></div>
+        <h2>{{ user?.fullName }}</h2>
+        <button class="btn btn-primary mt-2" routerLink="/update">Update Profile</button>
+        <br>
+        <button class="btn btn-danger mt-2" (click)="deleteProfile()">Delete Profile</button>
+      </div>
+      
+      <div class="col-md-8">
+        <h3>User Details</h3>
+        <p>Email: {{ user?.email }}</p>
+        <p>Fullname: {{ user?.fullName }}</p>
+        <p>Username: {{ user?.username }}</p>
+      </div>
+    </div>
+
+    <div class="dashboard-container mt-4">
+      <h3>Dashboard</h3>
+      <div class="card">
+        <div class="card-header">
+          <h4>Posts</h4>
+        </div>
+        <div class="card-body">
+          <div *ngFor="let post of posts" class="post-container mb-3">
+            <h5>{{ post.title }}</h5>
+            <button class="btn btn-danger" (click)="deletePost(post)">Delete Post</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,11 @@
+<div class="comments-section">
+    <h5>Comments</h5>
+    <div *ngFor="let comment of comments">
+      <p><strong>{{ comment.username }}:</strong> {{ comment.content }}</p>
+      <button *ngIf="comment.userId === userId" class="btn btn-danger btn-sm" (click)="deleteComment(comment.id)">Delete</button>
+    </div>
+    <div class="form-group mt-3">
+      <textarea class="form-control" [(ngModel)]="newComment" placeholder="Add a comment"></textarea>
+      <button class="btn btn-primary mt-2" (click)="addComment()">Post Comment</button>
+    </div>
+  </div>

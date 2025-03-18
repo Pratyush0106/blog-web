@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register</title>
+</head>
+<body>
+  <div class="main">
+    <input type="checkbox" id="chk" aria-hidden="true">
+
+    <div class="signup">
+      <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+        <label for="chk" aria-hidden="true">Sign up</label>
+        <input type="text" formControlName="fullname" placeholder="Full Name" required>
+        <input type="text" formControlName="username" placeholder="User name" required>
+        <input type="email" formControlName="email" placeholder="Email" required>
+        <input type="password" formControlName="password" placeholder="Password" required>
+        <button type="submit">Sign up</button>
+      </form>
+    </div>
+
+    <!-- <div class="login">
+      <form (ngSubmit)="onLogin()">
+        <label for="chk" aria-hidden="true">Login</label>
+        <input type="text" name="username" [(ngModel)]="loginObj.username" placeholder="Username" required>
+        <input type="password" name="password" [(ngModel)]="loginObj.password" placeholder="Password" required>
+        <button type="submit">Login</button>
+      </form>
+    </div> -->
+    <div class="login">
+      <form (ngSubmit)="onLogin()">
+        <label for="chk" aria-hidden="true">Login</label>
+        <input type="text" name="username" [(ngModel)]="loginObj.username" placeholder="Username" required>
+        <input type="password" name="password" [(ngModel)]="loginObj.password" placeholder="Password" required>
+        <button type="submit">Login</button>
+      </form>
+      <button style="text-decoration: none; color: white;"  class="btn btn-link"   (click)="forgotPassword()">Forgot Password?</button>
+    </div>
+  </div>
+</body>
+</html>

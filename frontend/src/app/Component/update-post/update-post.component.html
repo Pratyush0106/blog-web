@@ -1,0 +1,21 @@
+<div class="modal" id="updatePostModal" [ngClass]="{'show': showModal}" (click)="closeModal($event)">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <div class="modal-header">
+      <h5 class="modal-title">Update Post</h5>
+      <span class="close" (click)="closeModal()">&times;</span>
+    </div>
+    <div class="modal-body">
+      <form [formGroup]="updatePostForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input type="text" id="title" formControlName="title">
+        </div>
+        <div class="form-group">
+          <label for="content">Content</label>
+          <textarea id="content" formControlName="content" class="form-control"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Update Post</button>
+      </form>
+    </div>
+  </div>
+</div>
